@@ -2,9 +2,8 @@ Meteor.startup(function () {
     if (!Session.get('notes')) {
         Session.setPersistent('notes', []);
     }
-
-
 });
+
 $.Velocity.RegisterEffect('transition.pushRightIn', {
   defaultDuration: 500,
   calls: [

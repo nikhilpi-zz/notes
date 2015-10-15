@@ -5,7 +5,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -40,7 +39,7 @@ footer {
         right: auto;
     }
 
-    #note_add {
+    .circle_btn {
         width: 50px;
         height: 50px;
         background: @primaryFontColor;
@@ -54,24 +53,18 @@ footer {
         border: none;
         font-family: 'Raleway';
         font-weight: 400;
+        line-height: 38px;
     }
 
     #note_back {
-        width: 50px;
-        height: 50px;
-        background: @primaryFontColor;
-        -moz-border-radius: 50px;
-        -webkit-border-radius: 50px;
-        border-radius: 50px;
-        color: #ffffff;
-        font-size: 38px;
-        line-height: 38px;
-        padding: 0px;
-        text-align: center;
-        border: none;
-        font-family: 'Raleway';
-        font-weight: 400;
+        .fa {
+            padding-right: 4px;
+        }
     }
+}
+
+.notes_list {
+    overflow: scroll;
 }
 
 .note_row {

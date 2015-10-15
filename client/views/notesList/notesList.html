@@ -1,5 +1,5 @@
 <template name="notesList">
-    <div class="container">
+    <div class="container notes_list">
         <div class="row">
             {{#each notes}}
                 {{> notesRow this}}
@@ -7,18 +7,18 @@
         </div>
     </div>
     <footer>
-        <button id="note_add" class="hidden">+</button>
+        <button id="note_add" class="circle_btn hidden">+</button>
     </footer>
 </template>
 
 
 <template name="notesRow">
     <div class="note_row">
-        <h2><a href="{{pathFor route='note' data=this}}">
+        <h2>
             {{#if bookmark}}
                 <i class="fa fa-bookmark"></i>
             {{/if}}
             {{title}}
-        </a></h2>
+        </h2>
     </div>
 </template>

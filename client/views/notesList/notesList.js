@@ -13,8 +13,9 @@ Template['notesList'].events({
 });
 
 Template['notesRow'].events({
-    'click .note_row a': function() {
+    'click .note_row': function() {
         $('#note_add').addClass('hidden');
+        Router.go('note', this);
     },
 });
 
