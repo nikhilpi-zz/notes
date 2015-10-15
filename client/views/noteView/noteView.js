@@ -45,7 +45,8 @@ Template['noteView'].events({
         }
     },
 
-    'click #note_back': function() {
+    'click #note_back': function(event, template) {
+        event.currentTarget.classList.add('hidden');
         Router.go('list');
     }
 });

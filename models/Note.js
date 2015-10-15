@@ -20,9 +20,7 @@ Note = {
 
         _.extend(note, data);
         notes.push(note);
-        console.log(notes)
         Session.update('notes',notes);
-        console.log(Session.get('notes'))
         return note;
     },
 
