@@ -8,18 +8,22 @@ Note = {
     add: function(data) {
         var notes = Session.get('notes');
         var id = next_id();
+
         var note = {
             id: id,
             createdAt: new Date(),
             title: '',
             body: '',
-            bookmark: false
+            bookmark: false,
+            newNote: true
         }
 
         _.extend(note, data);
         notes.push(note);
+        console.log(notes)
         Session.update('notes',notes);
-        return id;
+        console.log(Session.get('notes'))
+        return note;
     },
 
     remove: function(id) {
@@ -35,6 +39,30 @@ Note = {
                 return notes[i];
             }
         }; 
+    },
+
+    all: function(){
+        var notes = Session.get('notes');
+
+        notes = notes.map(function(note){
+            if (note.title.length === 0 && !note.newNote) {
+                note.title = moment(note.createdAt).format('MM/DD/YY');
+            }
+            return note;
+        })
+
+        Session.update('notes',notes);
+
+        var favs = notes.filter(function(note){return note.bookmark});
+        var notes = notes.filter(function(note){return  !note.bookmark});
+        favs.sort(function(a,b){
+            return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+        notes.sort(function(a,b){
+            return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+
+        return favs.concat(notes);
     }
 }
 

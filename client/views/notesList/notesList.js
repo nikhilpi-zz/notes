@@ -1,15 +1,6 @@
 Template['notesList'].helpers({
     'notes': function(){
-        var notes = Session.get('notes');
-        var favs = notes.filter(function(note){return note.bookmark});
-        var notes = notes.filter(function(note){return  !note.bookmark});
-        favs.sort(function(a,b){
-            return new Date(b.createdAt) - new Date(a.createdAt);
-        });
-        notes.sort(function(a,b){
-            return new Date(b.createdAt) - new Date(a.createdAt);
-        });
-        return favs.concat(notes);
+        return Note.all();
     }
 });
 
@@ -22,5 +13,5 @@ Template['notesList'].onRendered(function(){
         $("html, body").animate({ scrollTop: 0 }, "fast");
         Session.update('scrollTop',false);
     }
-    
+    Session.set('titleEdited', false);
 })

@@ -12,6 +12,11 @@ button:focus {
     outline: none;
 }
 
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: @primaryFontColor;
+}
+
 html, body, #main {
     height: 100%;
     width: 100%;
@@ -81,6 +86,7 @@ footer {
         padding: 15px 0;
         width: 100%;
         border-bottom: 2px solid @primaryFontColor;
+        border-radius: none;
     }
 
     .note_date {
@@ -93,11 +99,21 @@ footer {
     }
 
     .note_bookmark{
-
+        display: inline-block;     
+        position: relative;    
+        z-index: 1;     
+        padding: 1em;     
+        margin: -1em; 
     }
 
     .note_delete{
         float: right;
+        position: absolute;
+        display: inline-block;     
+        position: relative;    
+        z-index: 1;     
+        padding: 1em;     
+        margin: -1em; 
     }
 
     .note_body {
