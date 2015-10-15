@@ -71,12 +71,12 @@ Transitioner.transition({
     }
 });
 
-// Transitioner.transition({
-//     fromRoute: 'note',
-//     toRoute: 'list',
-//     velocityAnimation: {
-//         in: 'transition.pushLeftIn',
-//         out: 'transition.pushRightOut'
-//     }
-// });
+Transitioner.transition({
+    fromRoute: 'note',
+    toRoute: 'list',
+    velocityAnimation: {
+        in: 'transition.pushLeftIn',
+        out: 'transition.pushRightOut'
+    }
+});
   

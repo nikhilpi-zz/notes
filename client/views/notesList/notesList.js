@@ -5,7 +5,10 @@ Template['notesList'].helpers({
 });
 
 Template['notesList'].events({
-
+    'click #note_add': function() {
+        var note = Note.add({});
+        Router.go('note', note);
+    }
 });
 
 Template['notesList'].onRendered(function(){

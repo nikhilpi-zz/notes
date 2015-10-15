@@ -43,6 +43,10 @@ Template['noteView'].events({
             Note.remove(this.id);
             Router.go('list');
         }
+    },
+
+    'click #note_back': function() {
+        Router.go('list');
     }
 });
 
