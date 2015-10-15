@@ -1,0 +1,10 @@
+<template name="basicLayout">
+    <div id="main">
+        <header>
+            {{> header}}
+        </header>
+        {{#transitioner}}
+            {{> yield}}
+        {{/transitioner}}
+    </div>
+</template>

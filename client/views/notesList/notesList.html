@@ -1,0 +1,24 @@
+<template name="notesList">
+    <div class="container">
+        <div class="row">
+            {{#each notes}}
+                {{> notesRow this}}
+            {{/each}}
+        </div>
+    </div>
+    <footer>
+        {{> footer}}
+    </footer>
+</template>
+
+
+<template name="notesRow">
+    <div class="note_row">
+        <h2><a href="{{pathFor route='note' data=this}}">
+            {{#if bookmark}}
+                <i class="fa fa-bookmark"></i>
+            {{/if}}
+            {{title}}
+        </a></h2>
+    </div>
+</template>

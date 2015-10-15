@@ -1,0 +1,7 @@
+<template name="noteView">
+    <div id="note_view" class="container">
+        <input type="text" class="note_title" value="{{title}}" placeholder="Title...">
+        <p class="note_date">{{formatDate createdAt}} <a class="note_bookmark">{{#if bookmark}}<i class="fa fa-bookmark"></i>{{else}}<i class="fa fa-bookmark-o"></i>{{/if}}</a><a class="note_delete"><i class="fa fa-trash-o"></i></a></p>
+        <textarea class="note_body" value="{{body}}" placeholder="Hello world..."></textarea>
+    </div>
+</template>
