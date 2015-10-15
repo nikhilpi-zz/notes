@@ -21,3 +21,8 @@ Press back to see list
 
 ### Demo
 nikhilnotes.meteor.com
+
+### Running Locally:
+1. Install Meteor.js from https://www.meteor.com/
+2. Run $ meteor in this directory
+3. Navigate to http://localhost:3000
